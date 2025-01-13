@@ -33,7 +33,11 @@ Options can be provided either as command line options or environment variables.
 
 ## Development
 
-<!--Add clear instructions on how to start development of the project here -->
+```
+% npm install
+% set -a ; source .env ; set +a
+% npm start -- https://lab.cdn.eyevinn.technology/osc/VINN-10/339bd6f7-5db1-4faf-9b95-eb5c90f017f5/index.m3u8 s3://dest/files/
+```
 
 ## Contributing
 
