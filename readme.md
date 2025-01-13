@@ -31,6 +31,27 @@ Download full HLS package (playlists and media chunks) and upload contents to an
 
 Options can be provided either as command line options or environment variables.
 
+```
+% npx @eyevinn/hls-copy-s3 \
+  --dest-endpoint=<dest-endpoint> \
+  --dest-access-key=<dest-access-key> \
+  --dest-secret-key=<dest-secret-key> \
+  https://lab.cdn.eyevinn.technology/osc/VINN-10/339bd6f7-5db1-4faf-9b95-eb5c90f017f5/index.m3u8 s3://test/files/
+```
+
+Using environment variables stored in a file called `.env` in this example:
+
+```
+DEST_ENDPOINT=<dest-endpoint>
+DEST_ACCESS_KEY=<dest-access-key>
+DEST_SECRET_KEY=<dest-secret-key>
+```
+
+```
+% set -a ; source .env ; set +a
+% npx @eyevinn/hls-copy-s3 https://lab.cdn.eyevinn.technology/osc/VINN-10/339bd6f7-5db1-4faf-9b95-eb5c90f017f5/index.m3u8 s3://test/files/
+```
+
 ## Development
 
 ```
