@@ -1,6 +1,6 @@
 {
   "name": "@eyevinn/hls-copy-s3",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Script to download full HLS package and upload to an S3 bucket",
   "main": "dist/index.js",
   "bin": {
