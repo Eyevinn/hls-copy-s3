@@ -20,6 +20,8 @@
 
 </div>
 
+[![Badge OSC](https://img.shields.io/badge/Evaluate-24243B?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8yODIxXzMxNjcyKSIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI3IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz4KPGRlZnM%2BCjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8yODIxXzMxNjcyIiB4MT0iMTIiIHkxPSIwIiB4Mj0iMTIiIHkyPSIyNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjQzE4M0ZGIi8%2BCjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzREQzlGRiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM%2BCjwvc3ZnPgo%3D)](https://app.osaas.io/browse/eyevinn-hls-copy-s3)
+
 Download full HLS package (playlists and media chunks) and upload contents to an S3 bucket.
 
 ## Requirements
@@ -51,6 +53,10 @@ DEST_SECRET_KEY=<dest-secret-key>
 % set -a ; source .env ; set +a
 % npx @eyevinn/hls-copy-s3 https://lab.cdn.eyevinn.technology/osc/VINN-10/339bd6f7-5db1-4faf-9b95-eb5c90f017f5/index.m3u8 s3://test/files/
 ```
+
+## Eyevinn Open Source Cloud
+
+Also available as an open web service in [Eyevinn Open Source Cloud](https://www.osaas.io). This enables you to transfer HLS directly to an S3 bucket without having to go through your local computer first. Read [this documentation](https://docs.osaas.io/osaas.wiki/Service%3A-HLS-Copy-to-S3.html) for usage instructions.
 
 ## Development
 
