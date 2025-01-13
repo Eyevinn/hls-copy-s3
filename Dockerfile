@@ -14,4 +14,4 @@ RUN npm install -g .
 VOLUME [ "/data" ]
 
 ENV STAGING_DIR=/data
-CMD ["hls-copy-s3"]
+ENTRYPOINT ["hls-copy-s3"]
