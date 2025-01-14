@@ -54,13 +54,14 @@ async function upload(dest: BucketConfig, stagingDir: string) {
       AWS_SECRET_ACCESS_KEY: dest.s3secretKey,
       AWS_REGION: dest.s3region
     },
+    stdio: 'inherit',
     shell: true
   });
   if (status !== 0) {
     if (stderr) {
       console.log(stderr.toString());
     }
-    throw new Error('Sync to remote bucket failed');
+    throw new Error('Sync to remote bucket failed: ' + status);
   }
   console.log(`Synced ${stagingDir} to ${dest.s3url.toString()}`);
 }
