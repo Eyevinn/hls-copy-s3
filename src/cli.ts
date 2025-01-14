@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import { Command } from 'commander';
-import { doCopy } from '.';
+import { doCopy } from './index.js';
 
 const cli = new Command();
 cli

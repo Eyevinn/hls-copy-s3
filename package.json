@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Script to download full HLS package and upload to an S3 bucket",
   "main": "dist/index.js",
+  "type": "module",
   "bin": {
     "hls-copy-s3": "dist/cli.js"
   },
@@ -13,8 +14,7 @@
     "lint": "eslint .",
     "pretty": "prettier --check --ignore-unknown .",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "postversion": "git push && git push --tags",
-    "start": "ts-node -T src/cli.ts"
+    "postversion": "git push && git push --tags"
   },
   "license": "MIT",
   "engines": {
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "commander": "^12.1.0",
-    "hlsdownloader": "^2.2.3"
+    "hlsdownloader": "^3.2.12"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
@@ -39,6 +39,6 @@
     "jest-environment-node-single-context": "^29.1.0",
     "prettier": "^2.8.4",
     "ts-jest": "^29.0.5",
-    "typescript": "^4.9.5"
+    "typescript": "^5.7.3"
   }
 }

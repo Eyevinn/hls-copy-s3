@@ -69,29 +69,12 @@ export async function doCopy(opts: CopyOptions) {
   const stagingDir = await prepare(opts.stagingDir);
   console.log(`Downloading HLS from ${opts.source.href} to ${stagingDir}`);
   try {
-    const download = async (): Promise<string> =>
-      new Promise((resolve, reject) => {
-        const downloader = new HLSDownloader({
-          playlistURL: opts.source.href,
-          destination: stagingDir
-        });
-        downloader.startDownload(
-          (
-            err: any,
-            msg: { message: string; playlistURL: string; errors: string[] }
-          ) => {
-            if (err) {
-              reject(err);
-            } else {
-              if (msg.errors && msg.errors.length > 0) {
-                msg.errors.forEach((e) => console.error(e));
-              }
-              resolve(msg.message);
-            }
-          }
-        );
-      });
-    const msg = await download();
+    const download = new HLSDownloader({
+      playlistURL: opts.source.href,
+      destination: stagingDir,
+      concurrency: 5
+    });
+    const msg = await download.startDownload();
     console.log(msg);
     await upload(opts.dest, stagingDir);
     await cleanup(stagingDir);
